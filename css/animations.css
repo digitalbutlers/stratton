@@ -1,0 +1,34 @@
+@media (prefers-reduced-motion: no-preference) {
+  [data-a-type]:not([data-a-state]) {
+    transition-duration: 0s !important;
+  }
+
+  [data-a-type="slide"]:not([data-a-state="running"], [data-a-state="finished"]) {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+
+  [data-a-type="slide"][data-a-state="running"],
+  [data-a-type="slide"][data-a-state="finished"] {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  [data-a-type="fade"]:not([data-a-state="running"], [data-a-state="finished"]) {
+    opacity: 0;
+  }
+
+  [data-a-type="fade"][data-a-state="running"],
+  [data-a-type="fade"][data-a-state="finished"] {
+    opacity: 1;
+  }
+
+  [data-a-type="grow"]:not([data-a-state="running"], [data-a-state="finished"]) {
+    transform: scale(0);
+  }
+
+  [data-a-type="grow"][data-a-state="running"],
+  [data-a-type="grow"][data-a-state="finished"] {
+    transform: scale(1);
+  }
+}

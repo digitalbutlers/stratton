@@ -1,0 +1,42 @@
+.search-value {
+	background-color: #c5b39e;
+	color: #ffffff;
+}
+.search__input:focus,
+.search__input:focus-visible {
+	border-color: #c5b39e;
+	outline: 0;
+}
+
+.tabs-inner {
+	position: relative;
+}
+[data-tabs="btn"].js--active {
+	color: #c5b39e;
+	text-decoration: underline;
+}
+[data-tabs="tab"] {
+	transition: opacity 0.3s ease;
+}
+[data-tabs="tab"]:not(.js--active) {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
+[data-search="cross"] {
+	opacity: 0;
+	pointer-events: none;
+	transition-property: opacity, transform;
+	transition-duration: 0.3s;
+	transition-timing-function: ease;
+}
+[data-search="cross"].js--active {
+	opacity: 1;
+	pointer-events: auto;
+}
+[data-search='item'].js--disable {
+	display: none !important;
+	color: #00000033;
+}

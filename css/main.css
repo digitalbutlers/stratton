@@ -1,0 +1,121 @@
+/* scrollbar */
+html {
+  scrollbar-width: none;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  border-radius: 100px;
+  background-color: #e0d6c4;
+}
+::-webkit-scrollbar-track {
+  width: 8px;
+}
+
+/* header */
+body.header-open {
+  overflow: hidden !important;
+  padding-right: 8px;
+}
+.header-open .header {
+  padding-right: 8px;
+}
+[data-filter='true'] {
+  transition: filter 0.5s ease;
+}
+.header-open [data-filter='true'] {
+  filter: brightness(0.5);
+}
+.header-open .header__btn:hover {
+  transform: rotate(90deg);
+}
+.header-open .header__btn-line {
+  background-color: #ffffff;
+}
+.header-open .header__btn-line--top {
+  transform: rotate(45deg);
+}
+.header-open .header__btn-line--middle {
+  opacity: 0;
+}
+.header-open .header__btn-line--bottom {
+  transform: rotate(-45deg);
+}
+.header-open .header__menu {
+  transform: translateX(0);
+}
+@media screen and (max-width: 991px) {
+  .header-open .header__logo {
+    filter: invert(1);
+  }
+}
+.header-open .header__menu {
+  transform: translateX(0);
+}
+
+.header.header--hide {
+  transform: translateY(-100%);
+}
+
+.header__btn:hover .header__btn-line--top,
+.header__btn:hover .header__btn-line--middle,
+.header__btn:hover .header__btn-line--bottom {
+  animation-name: hamburger-hover;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+.header__btn:hover .header__btn-line--middle {
+  animation-delay: 0.2s;
+}
+.header__btn:hover .header__btn-line--bottom {
+  animation-delay: 0.4s;
+}
+
+.header-open .header__btn:hover .header__btn-line--top,
+.header-open .header__btn:hover .header__btn-line--middle,
+.header-open .header__btn:hover .header__btn-line--bottom {
+  animation-name: unset;
+}
+
+@keyframes hamburger-hover {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: -100%;
+  }
+  15% {
+    left: -100%;
+  }
+  25% {
+    left: 0;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+
+.header.scrolled {
+  background-color: #f5f1ec;
+  border-color: #c5b39e;
+}
+.header-open .header.scrolled {
+  background-color: #7a7876;
+  border-color: #62594f;
+}
+
+@media screen and (min-width: 1920px) {
+  .header-open .header__btn {
+    position: fixed;
+    right: 2.5rem;
+  }
+}
+@media screen and (max-width: 360px) {
+	.menu__top {
+  	padding-left: 0;
+  }
+}
