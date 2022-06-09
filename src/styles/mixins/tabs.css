@@ -1,0 +1,28 @@
+.tabs-inner {
+	position: relative;
+}
+.tabs__nav {
+	position: relative;
+	z-index: 1;
+}
+.tabs__background {
+	position: absolute;
+	z-index: -1;
+	pointer-events: none;
+	width: 20px;
+	height: 100%;
+	background-color: #cccccc;
+	transition-property: width, height, left, top;
+	transition-duration: 0.4s;
+	transition-timing-function: ease;
+}
+.tab {
+	transition: opacity 0.3s ease;
+}
+.tab:not(.js--active) {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	opacity: 0;
+	pointer-events: none;
+}
